@@ -45,28 +45,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="In the Cloud">
-<meta property="og:url" content="http:&#x2F;&#x2F;www.mynode.cc&#x2F;index.html">
+  <meta name="description" content="常规服务器安装了CentOS安装后,需要对系统进行网络的配置，方便通过工具进行远程连接及网络的使用。 网卡配置下面以VMware默认的虚拟网卡为例说明网络常用配置。 网卡的配置地址： 1[root@local]# vi &amp;#x2F;etc&amp;#x2F;sysconfig&amp;#x2F;network-scripts&amp;#x2F;ifcfg-ens32 #最后的ens32为网卡名  重启网络的命令 1[ro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7 网络配置">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.mynode.cc&#x2F;2019&#x2F;12&#x2F;07&#x2F;centos-01&#x2F;index.html">
 <meta property="og:site_name" content="In the Cloud">
+<meta property="og:description" content="常规服务器安装了CentOS安装后,需要对系统进行网络的配置，方便通过工具进行远程连接及网络的使用。 网卡配置下面以VMware默认的虚拟网卡为例说明网络常用配置。 网卡的配置地址： 1[root@local]# vi &amp;#x2F;etc&amp;#x2F;sysconfig&amp;#x2F;network-scripts&amp;#x2F;ifcfg-ens32 #最后的ens32为网卡名  重启网络的命令 1[ro">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-07T13:33:29.951Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.mynode.cc/">
+<link rel="canonical" href="http://www.mynode.cc/2019/12/07/centos-01/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>In the Cloud</title>
+  <title>CentOS7 网络配置 | In the Cloud</title>
   
 
 
@@ -171,96 +174,10 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.mynode.cc/2019/12/07/centos-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="zhangansong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="In the Cloud">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/07/centos-02/" class="post-title-link" itemprop="url">CentOS7 常用源地址配置</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-07 21:34:30 / 修改时间：23:49:15" itemprop="dateCreated datePublished" datetime="2019-12-07T21:34:30+08:00">2019-12-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <h3 id="阿里云yum源配置"><a href="#阿里云yum源配置" class="headerlink" title="阿里云yum源配置"></a>阿里云yum源配置</h3><ul>
-<li><p>备份原来的yum源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span></pre></td></tr></table></figure>
-</li>
-<li><p>下载阿里云的CentOS-Base.repo 到/etc/yum.repos.d/</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo</span></pre></td></tr></table></figure>
-</li>
-<li><p>清理及生成缓存</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum clean all</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum makecache</span></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="npm阿里云源配置"><a href="#npm阿里云源配置" class="headerlink" title="npm阿里云源配置"></a>npm阿里云源配置</h3><ul>
-<li><p>安装nodejs、npm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># wget https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tar zxvf node-v12.13.1-linux-x64.tar.xz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mv node-v12.13.1-linux-x64 /usr/local/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd /usr/local/node-v12.13.1-linux-x64/bin/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ln -s /usr/local/node-v12.13.1-linux-x64/bin/node /usr/bin/node</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ln -s /usr/local/node-v12.13.1-linux-x64/bin/npm /usr/bin/npm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># node -v</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># npm -v</span></span></pre></td></tr></table></figure>
-</li>
-<li><p>方法一：安装cnpm</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># npm i -g cnpm --registry https://registry.npm.taobao.org</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/node-v12.13.1-linux-x64/bin/cnpm -&gt; /usr/<span class="built_in">local</span>/node-v12.13.1-linux-x64/lib/node_modules/cnpm/bin/cnpm</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+ cnpm@6.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">added 680 packages from 938 contributors <span class="keyword">in</span> 36.937s</span></pre></td></tr></table></figure>
-</li>
-<li><p>方法二：临时使用淘宝镜像安装依赖包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm i -g express --registry https://registry.npm.taobao.org</span></pre></td></tr></table></figure>
-</li>
-<li><p>方法三：npm持久使用淘宝镜像安装依赖包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">npm i -g express</span></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>注意，不推荐这样子，因为把npm的镜像完全设为了淘宝的镜像，万一我们有些依赖包只有npm原始镜像里面才有，而淘宝里面没有，那就悲剧了。所以分开npm和cnpm是最好的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
   
   
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.mynode.cc/2019/12/07/centos-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -274,8 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/07/centos-01/" class="post-title-link" itemprop="url">CentOS7 网络配置</a>
+          CentOS7 网络配置
         </h1>
 
         <div class="post-meta">
@@ -300,7 +216,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>常规服务器安装了CentOS安装后,需要对系统进行网络的配置，方便通过工具进行远程连接及网络的使用。</p>
+        <p>常规服务器安装了CentOS安装后,需要对系统进行网络的配置，方便通过工具进行远程连接及网络的使用。</p>
 <h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><p>下面以VMware默认的虚拟网卡为例说明网络常用配置。</p>
 <p>网卡的配置地址：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@local]# vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens32 #最后的ens32为网卡名</span></pre></td></tr></table></figure>
@@ -322,151 +238,36 @@
 
 <h3 id="其他常用网络配置命令"><a href="#其他常用网络配置命令" class="headerlink" title="其他常用网络配置命令"></a>其他常用网络配置命令</h3><p>ip<br>nmcli<br>nmtui<br>ethtool</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.mynode.cc/2019/12/03/sa-zabbix-01/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="zhangansong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="In the Cloud">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/03/sa-zabbix-01/" class="post-title-link" itemprop="url">sa-zabbix-01</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-03 00:15:43" itemprop="dateCreated datePublished" datetime="2019-12-03T00:15:43+08:00">2019-12-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.mynode.cc/2019/12/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="zhangansong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="In the Cloud">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-02 01:26:49" itemprop="dateCreated datePublished" datetime="2019-12-02T01:26:49+08:00">2019-12-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/03/sa-zabbix-01/" rel="prev" title="sa-zabbix-01">
+      <i class="fa fa-chevron-left"></i> sa-zabbix-01
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/07/centos-02/" rel="next" title="CentOS7 常用源地址配置">
+      CentOS7 常用源地址配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -495,6 +296,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡配置"><span class="nav-number">1.</span> <span class="nav-text">网卡配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置动态IP"><span class="nav-number">1.1.</span> <span class="nav-text">配置动态IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置静态IP"><span class="nav-number">1.2.</span> <span class="nav-text">配置静态IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络检测"><span class="nav-number">1.3.</span> <span class="nav-text">网络检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他常用网络配置命令"><span class="nav-number">1.4.</span> <span class="nav-text">其他常用网络配置命令</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
