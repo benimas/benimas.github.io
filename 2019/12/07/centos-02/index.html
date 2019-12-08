@@ -45,14 +45,14 @@
   };
 </script>
 
-  <meta name="description" content="阿里云yum源配置 备份原来的yum源 1mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup  下载阿里云的CentOS-Base.repo 到&#x2F;etc&#x2F;yum.repos.d&#x2F; 1curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.">
+  <meta name="description" content="阿里云yum源配置 备份原来的yum源  1mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup   下载阿里云的CentOS-Base.repo 到&#x2F;etc&#x2F;yum.repos.d&#x2F;  1curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7 常用源地址配置">
 <meta property="og:url" content="http:&#x2F;&#x2F;www.mynode.cc&#x2F;2019&#x2F;12&#x2F;07&#x2F;centos-02&#x2F;index.html">
 <meta property="og:site_name" content="In the Cloud">
-<meta property="og:description" content="阿里云yum源配置 备份原来的yum源 1mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup  下载阿里云的CentOS-Base.repo 到&#x2F;etc&#x2F;yum.repos.d&#x2F; 1curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.">
+<meta property="og:description" content="阿里云yum源配置 备份原来的yum源  1mv &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo.backup   下载阿里云的CentOS-Base.repo 到&#x2F;etc&#x2F;yum.repos.d&#x2F;  1curl -o &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirro">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-07T15:49:15.326Z">
+<meta property="og:updated_time" content="2019-12-08T16:09:12.791Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.mynode.cc/2019/12/07/centos-02/">
@@ -200,10 +200,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-07 21:34:30 / 修改时间：23:49:15" itemprop="dateCreated datePublished" datetime="2019-12-07T21:34:30+08:00">2019-12-07</time>
+              <time title="创建时间：2019-12-07 21:34:30" itemprop="dateCreated datePublished" datetime="2019-12-07T21:34:30+08:00">2019-12-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-09 00:09:12" itemprop="dateModified" datetime="2019-12-09T00:09:12+08:00">2019-12-09</time>
+              </span>
 
           
 
@@ -217,33 +223,90 @@
 
       
         <h3 id="阿里云yum源配置"><a href="#阿里云yum源配置" class="headerlink" title="阿里云yum源配置"></a>阿里云yum源配置</h3><ul>
-<li><p>备份原来的yum源</p>
+<li>备份原来的yum源</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span></pre></td></tr></table></figure>
-</li>
-<li><p>下载阿里云的CentOS-Base.repo 到/etc/yum.repos.d/</p>
+
+<ul>
+<li>下载阿里云的CentOS-Base.repo 到/etc/yum.repos.d/</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/epel-7.repo http://mirrors.aliyun.com/repo/epel-7.repo</span></pre></td></tr></table></figure>
-</li>
-<li><p>清理及生成缓存</p>
+
+<ul>
+<li>清理及生成缓存</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum clean all</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">yum makecache</span></pre></td></tr></table></figure>
 
-</li>
-</ul>
 <h3 id="npm阿里云源配置"><a href="#npm阿里云源配置" class="headerlink" title="npm阿里云源配置"></a>npm阿里云源配置</h3><ul>
-<li><p>安装nodejs、npm</p>
+<li>安装nodejs、npm</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># wget https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tar zxvf node-v12.13.1-linux-x64.tar.xz</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mv node-v12.13.1-linux-x64 /usr/local/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd /usr/local/node-v12.13.1-linux-x64/bin/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ln -s /usr/local/node-v12.13.1-linux-x64/bin/node /usr/bin/node</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ln -s /usr/local/node-v12.13.1-linux-x64/bin/npm /usr/bin/npm</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># node -v</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># npm -v</span></span></pre></td></tr></table></figure>
-</li>
-<li><p>方法一：安装cnpm</p>
+
+<ul>
+<li>方法一：安装cnpm</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># npm i -g cnpm --registry https://registry.npm.taobao.org</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/node-v12.13.1-linux-x64/bin/cnpm -&gt; /usr/<span class="built_in">local</span>/node-v12.13.1-linux-x64/lib/node_modules/cnpm/bin/cnpm</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+ cnpm@6.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">added 680 packages from 938 contributors <span class="keyword">in</span> 36.937s</span></pre></td></tr></table></figure>
-</li>
-<li><p>方法二：临时使用淘宝镜像安装依赖包</p>
+
+<ul>
+<li>方法二：临时使用淘宝镜像安装依赖包</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm i -g express --registry https://registry.npm.taobao.org</span></pre></td></tr></table></figure>
-</li>
-<li><p>方法三：npm持久使用淘宝镜像安装依赖包</p>
+
+<ul>
+<li>方法三：npm持久使用淘宝镜像安装依赖包</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">npm i -g express</span></pre></td></tr></table></figure>
 
-</li>
-</ul>
 <p>注意，不推荐这样子，因为把npm的镜像完全设为了淘宝的镜像，万一我们有些依赖包只有npm原始镜像里面才有，而淘宝里面没有，那就悲剧了。所以分开npm和cnpm是最好的。</p>
+<h3 id="pip-国内源配置"><a href="#pip-国内源配置" class="headerlink" title="pip 国内源配置"></a>pip 国内源配置</h3><p>pip常用国内源：</p>
+<blockquote>
+<p>清华：<a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>阿里云：<a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>华中理工大学：<a href="http://pypi.hustunique.com/" target="_blank" rel="noopener">http://pypi.hustunique.com/</a><br>山东理工大学：<a href="http://pypi.sdutlinux.org/" target="_blank" rel="noopener">http://pypi.sdutlinux.org/</a><br>豆瓣：<a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a></p>
+</blockquote>
+<ul>
+<li>安装python3</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum install python3</span></span></pre></td></tr></table></figure>
+
+<ul>
+<li>临时使用<br>可以在使用pip的时候加参数-i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pip install -i http://mirrors.aliyun.com/pypi/simple/ tensorflow</span></span></pre></td></tr></table></figure>
+<p>这样就会从阿里云这边的镜像去安装tensorflow库。</p>
+<ul>
+<li>永久使用</li>
+</ul>
+<p>在Linux下, 修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[global]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">index-url &#x3D; https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[install]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span></pre></td></tr></table></figure>
+<p>windows下，直接在user目录中创建一个pip目录，再新建文件pip.ini。（例如：C:\Users\zhangansong\pip\pip.ini）内容同上。</p>
+<h3 id="Docker-国内源配置"><a href="#Docker-国内源配置" class="headerlink" title="Docker 国内源配置"></a>Docker 国内源配置</h3><p>常用的docker国内源：</p>
+<blockquote>
+<p>docker官方中国区 <a href="https://registry.docker-cn.com" target="_blank" rel="noopener">https://registry.docker-cn.com</a><br>网易 <a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a><br>ustc <a href="http://docker.mirrors.ustc.edu.cn" target="_blank" rel="noopener">http://docker.mirrors.ustc.edu.cn</a><br>阿里云 http://&lt;你的ID&gt;.mirror.aliyuncs.com</p>
+</blockquote>
+<ul>
+<li>安装docker</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># curl -o /etc/yum.repos.d/docker-ce.repo  http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#  yum install docker-ce -y</span></span></pre></td></tr></table></figure>
+
+<ul>
+<li>设置国内源<br>通用的方法就是编辑/etc/docker/daemon.json：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  &quot;registry-mirrors&quot; : [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &quot;http:&#x2F;&#x2F;docker.mirrors.ustc.edu.cn&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &quot;https:&#x2F;&#x2F;dockerhub.azk8s.cn&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &quot;https:&#x2F;&#x2F;reg-mirror.qiniu.com&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &quot;http:&#x2F;&#x2F;registry.docker-cn.com&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  ],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  &quot;insecure-registries&quot; : [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &quot;docker.mirrors.ustc.edu.cn&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &quot;registry.docker-cn.com&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  ],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  &quot;debug&quot; : true,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  &quot;experimental&quot; : true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>设置后重启docker <code>systemctl restart docker</code></p>
+<h3 id="K8S安装源"><a href="#K8S安装源" class="headerlink" title="K8S安装源"></a>K8S安装源</h3><ul>
+<li>配置k8s的yum文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[k8s]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">name&#x3D;k8s</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">enabled&#x3D;1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">gpgcheck&#x3D;0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">baseurl&#x3D;https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;kubernetes&#x2F;yum&#x2F;repos&#x2F;kubernetes-el7-x86_64&#x2F;</span></pre></td></tr></table></figure>
+
+<ul>
+<li>下载k8s镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">K8S_VERSION=v1.16.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ETCD_VERSION=3.3.15-0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">DNS_VERSION=1.6.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">PAUSE_VERSION=3.1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">FLANNEL_VERSION=v0.11.0-amd64</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span class="variable">$PAUSE_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span class="variable">$ETCD_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span class="variable">$DNS_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">docker pull quay.io/coreos/flannel:<span class="variable">$FLANNEL_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:<span class="variable">$K8S_VERSION</span> k8s.gcr.io/kube-apiserver:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:<span class="variable">$K8S_VERSION</span> k8s.gcr.io/kube-controller-manager:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:<span class="variable">$K8S_VERSION</span> k8s.gcr.io/kube-scheduler:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:<span class="variable">$K8S_VERSION</span> k8s.gcr.io/kube-proxy:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span class="variable">$ETCD_VERSION</span> k8s.gcr.io/etcd:<span class="variable">$ETCD_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span class="variable">$PAUSE_VERSION</span> k8s.gcr.io/pause:<span class="variable">$PAUSE_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span class="variable">$DNS_VERSION</span> k8s.gcr.io/coredns:<span class="variable">$DNS_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:<span class="variable">$K8S_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span class="variable">$PAUSE_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span class="variable">$ETCD_VERSION</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span class="variable">$DNS_VERSION</span></span></pre></td></tr></table></figure>
+
+<ul>
+<li>下载k8s dashboard 镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">DASHDOARD_VERSION=v1.10.1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">HEAPSTER_VERSION=v1.5.4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">GRAFANA_VERSION=v5.0.4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">INFLUXDB_VERSION=v1.5.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">username=registry.cn-hangzhou.aliyuncs.com/google_containers</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">images=(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        kubernetes-dashboard-amd64:<span class="variable">$&#123;DASHDOARD_VERSION&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        heapster-grafana-amd64:<span class="variable">$&#123;GRAFANA_VERSION&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        heapster-amd64:<span class="variable">$&#123;HEAPSTER_VERSION&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        heapster-influxdb-amd64:<span class="variable">$&#123;INFLUXDB_VERSION&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> image <span class="keyword">in</span> <span class="variable">$&#123;images[@]&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">docker pull <span class="variable">$&#123;username&#125;</span>/<span class="variable">$&#123;image&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">docker tag <span class="variable">$&#123;username&#125;</span>/<span class="variable">$&#123;image&#125;</span> k8s.gcr.io/<span class="variable">$&#123;image&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">docker rmi <span class="variable">$&#123;username&#125;</span>/<span class="variable">$&#123;image&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">done</span></span></pre></td></tr></table></figure>
 
     </div>
 
@@ -300,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里云yum源配置"><span class="nav-number">1.</span> <span class="nav-text">阿里云yum源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm阿里云源配置"><span class="nav-number">2.</span> <span class="nav-text">npm阿里云源配置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里云yum源配置"><span class="nav-number">1.</span> <span class="nav-text">阿里云yum源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm阿里云源配置"><span class="nav-number">2.</span> <span class="nav-text">npm阿里云源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-国内源配置"><span class="nav-number">3.</span> <span class="nav-text">pip 国内源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-国内源配置"><span class="nav-number">4.</span> <span class="nav-text">Docker 国内源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K8S安装源"><span class="nav-number">5.</span> <span class="nav-text">K8S安装源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
